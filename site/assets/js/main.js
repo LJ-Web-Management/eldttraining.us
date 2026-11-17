@@ -2,6 +2,20 @@
 (function () {
   var track = function () { if (typeof window.gtag === 'function') { try { window.gtag.apply(null, arguments); } catch (e) {} } };
 
+  // Contact form (Typeform embed): count a submission as a lead
+  var typeformSent = false;
+  window.addEventListener('message', function (e) {
+    var host = '';
+    try { host = new URL(e.origin).hostname; } catch (x) { return; }
+    if (!/(^|\.)typeform\.com$/.test(host)) return;
+    var d = e.data;
+    if (typeof d === 'string') { try { d = JSON.parse(d); } catch (x) { return; } }
+    if (d && d.type === 'form-submit' && !typeformSent) {
+      typeformSent = true;
+      track('event', 'generate_lead', { method: 'contact_form', page_path: location.pathname });
+    }
+  });
+
   document.addEventListener('DOMContentLoaded', function () {
     // Mobile nav
     var navToggle = document.getElementById('navToggle');
@@ -57,6 +71,24 @@
         track('event', 'email_click', { page_path: location.pathname });
         track('event', 'generate_lead', { method: 'email' });
       }
+    });
+
+    // US map: show the hovered state's name
+    document.querySelectorAll('.us-map-wrap').forEach(function (wrap) {
+      var out = wrap.querySelector('.map-readout');
+      if (!out) return;
+      var idle = out.textContent;
+      var show = function (e) {
+        var a = e.target.closest ? e.target.closest('a[data-name]') : null;
+        if (!a) return;
+        out.textContent = a.getAttribute('data-name') + ' →';
+        out.classList.add('active');
+      };
+      var hide = function () { out.textContent = idle; out.classList.remove('active'); };
+      wrap.addEventListener('mouseover', show);
+      wrap.addEventListener('focusin', show);
+      wrap.addEventListener('mouseleave', hide);
+      wrap.addEventListener('focusout', hide);
     });
 
     // Video engagement

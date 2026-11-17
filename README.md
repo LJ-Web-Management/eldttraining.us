@@ -13,6 +13,7 @@ generator/            build system and content (edit here)
   data/courses.py     course catalog (hazwoper-osha.com IDs/SKUs, prices, hours, FAQs)
   data/syllabi.json   module/lesson lists pulled from the Shopify product descriptions
   data/states.py      state data for /pages/state/{xx}
+  data/us_map.json    state outlines for the clickable map (regenerate with tools/make_us_map.cjs)
   content/guides/*.md 41 guides (front matter + Markdown)
   content/pages/*.md  about, contact, partner, FAQ hub, policies
 site/                 built output: deploy this folder (CNAME + .nojekyll included)

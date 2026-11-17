@@ -240,7 +240,7 @@ COURSES = [
         "guide": "tanker-endorsement",
         "intro": [
             "The tank vehicle (N) endorsement is required to drive a CMV that carries liquids or gases in tanks with an individual capacity over 119 gallons and an aggregate capacity of 1,000 gallons or more. To get it, you pass your state's tanker knowledge test.",
-            "**Good to know:** the federal ELDT rule covers Class A, Class B, and the H, P, and S endorsements. It does not require ELDT for the N endorsement. This course is tank vehicle training that prepares you for the N knowledge test and gives employers documented training: regulations and endorsement rules, tank design (bulkheads, baffles, smooth-bore tanks), liquid surge and rollover risk, valves, manhole covers and emergency shutoffs, and safe driving with partial loads. Hauling hazmat in a tank? Choose the X endorsement course instead.",
+            "**Why take it:** the tanker knowledge test covers material most CDL study guides only skim, and an N endorsement opens up fuel, water, milk, and food-grade liquid hauling jobs. This course prepares you for that test and gives employers documented tank vehicle training: regulations and endorsement rules, tank design (bulkheads, baffles, smooth-bore tanks), liquid surge and rollover risk, valves, manhole covers and emergency shutoffs, and safe driving with partial loads. N is not part of the federal ELDT mandate, so there is no Training Provider Registry step: finish the course and test when you are ready. Hauling hazmat in a tank? Choose the X endorsement course instead.",
         ],
         "who": [
             "CDL holders adding the N endorsement",

@@ -345,27 +345,42 @@ def cta_band(c=None):
 <div class="card-actions"><a class="btn btn-green" href="/collections/all">See all courses</a></div></div>"""
 
 
+# (label, checked before, theory cell, theory class, behind-the-wheel cell, btw class, course slug)
+# Only courses we sell. Theory classes: yes = required (green), rec = recommended (orange).
+# Behind-the-wheel classes: online = no BTW needed, finish 100% online (green); btw = separate BTW (neutral).
 ELDT_TABLE_ROWS = [
-    ("Class A CDL (first time or B-to-A upgrade)", "CDL skills test", "Yes", "Yes, range and public road", "class-a"),
-    ("Class B CDL (first time)", "CDL skills test", "Yes", "Yes, range and public road", "class-b"),
-    ("Passenger (P) endorsement (first time)", "P skills test", "Yes", "Yes, range and/or public road", "passenger-p"),
-    ("School bus (S) endorsement (first time)", "S skills test", "Yes", "Yes, range and/or public road", "school-bus-s"),
-    ("Hazardous materials (H) endorsement (first time)", "H knowledge test", "Yes", "No", "hazmat-h"),
-    ("Tank vehicle (N) endorsement", "Not covered by ELDT", "No (federal)", "No", "tanker-n"),
-    ("Doubles/triples (T) endorsement", "Not covered by ELDT", "No (federal)", "No", None),
+    ("Class A CDL (first time)", "Checked before your Class A skills test", "Required", "yes", "Yes: range and public road", "btw", "class-a"),
+    ("Class B to Class A upgrade", "Checked before your Class A skills test", "Required", "yes", "Yes: range and public road", "btw", "b-to-a-upgrade"),
+    ("Class B CDL (first time)", "Checked before your Class B skills test", "Required", "yes", "Yes: range and public road", "btw", "class-b"),
+    ("Passenger (P) endorsement", "Checked before your P skills test", "Required", "yes", "Yes: range and/or public road", "btw", "passenger-p"),
+    ("School bus (S) endorsement", "Checked before your S skills test", "Required", "yes", "Yes: range and/or public road", "btw", "school-bus-s"),
+    ("Hazmat (H) endorsement", "Checked before your H knowledge test", "Required", "yes", "None: finish 100% online", "online", "hazmat-h"),
+    ("Hazmat + Tanker (X) endorsement", "Hazmat portion checked before your H knowledge test", "Required (hazmat portion)", "yes", "None: finish 100% online", "online", "hazmat-tanker-x"),
+    ("Tanker (N) endorsement", "Prepares you for the state N knowledge test", "Recommended prep|Not a federal ELDT mandate", "rec", "None: finish 100% online", "online", "tanker-n"),
 ]
+
+
+def cell_with_note(text):
+    """'Main text|small note' -> main text with a muted note underneath."""
+    main, _, note = text.partition("|")
+    return esc(main) + (f'<span class="cell-note">{esc(note)}</span>' if note else "")
 
 
 def eldt_table():
     rows = []
-    for lic, ver, th, btw, slug in ELDT_TABLE_ROWS:
-        link = f'<a href="/products/{BY_SLUG[slug]["handle"]}">{esc(lic)}</a>' if slug else esc(lic)
-        cls_t = "yes" if th.startswith("Yes") else "no"
-        cls_b = "yes" if btw.startswith("Yes") else "no"
-        rows.append(f"<tr><td>{link}</td><td>{esc(ver)}</td><td class=\"{cls_t}\">{esc(th)}</td><td class=\"{cls_b}\">{esc(btw)}</td></tr>")
-    return ('<div class="table-wrap"><table><thead><tr><th scope="col">License or endorsement</th><th scope="col">ELDT verified before</th>'
-            '<th scope="col">Theory required?</th><th scope="col">Behind-the-wheel required?</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table></div>"
-            '<p class="small">Source: 49 CFR Part 380, Subparts F and G, and the FMCSA Training Provider Registry. ELDT applies to applicants who did not already hold the license or endorsement before February 7, 2022.</p>')
+    for lic, note, th, cls_t, btw, cls_b, slug in ELDT_TABLE_ROWS:
+        c = BY_SLUG[slug]
+        tag = ' <span class="tag-inline">Best value</span>' if slug == "hazmat-tanker-x" else ""
+        rows.append(
+            f'<tr><td><a href="/products/{c["handle"]}"><strong>{esc(lic)}</strong></a>{tag}<span class="cell-note">{esc(note)}</span></td>'
+            f'<td class="{cls_t}">{cell_with_note(th)}</td><td class="{cls_b}">{esc(btw)}</td>'
+            f'<td class="course-cell"><div class="course-cta"><div><span class="cell-price">{money(c["price"])}</span>'
+            f'<span class="cell-note">{c["hours"]} hr{"s" if c["hours"] != 1 else ""}, self-paced</span></div>'
+            f'<a class="btn btn-dark btn-sm" href="/checkout?item={slug}">Enroll</a></div></td></tr>')
+    return ('<div class="table-wrap eldt-table"><table><thead><tr><th scope="col">License or endorsement</th><th scope="col">ELDT theory</th>'
+            '<th scope="col">Behind-the-wheel</th><th scope="col">Our online course</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table></div>"
+            '<p class="small">Every course is 100% online with audio playback. ELDT completions (Class A, Class B, P, S, and H, including the hazmat portion of X) are reported to the FMCSA Training Provider Registry. '
+            'Source: 49 CFR Part 380, Subparts F and G. ELDT applies to applicants who did not already hold the license or endorsement before February 7, 2022.</p>')
 
 
 def state_grid():
@@ -376,6 +391,45 @@ def state_grid():
 def state_select():
     opts = "".join(f'<option value="/pages/state/{s["abbr"].lower()}">{esc(s["name"])}</option>' for s in sorted(STATES, key=lambda x: x["name"]))
     return f'<form class="state-select" action="/pages/state" onsubmit="return false"><label class="visually-hidden" for="statePicker">Choose your state</label><select id="statePicker"><option value="">Choose your state…</option>{opts}</select></form>'
+
+
+US_MAP = json.load(open(os.path.join(HERE, "data", "us_map.json")))  # see generator/tools/make_us_map.cjs
+MAP_CALLOUTS = ["VT", "NH", "MA", "RI", "CT", "NJ", "DE", "MD", "DC"]  # too small to tap: labeled boxes to the right
+MAP_LABEL_NUDGE = {"FL": (16, 4), "LA": (-12, 0), "MI": (10, 16), "KY": (6, 2), "WV": (-3, 4), "VA": (10, 4), "ID": (0, 16),
+                   "HI": (0, -6), "MN": (-6, 6), "CA": (-6, 0), "NC": (8, 0), "SC": (4, 2), "OK": (12, 0), "NY": (6, 4)}
+
+
+def state_map():
+    """Clickable SVG map of the states (Albers USA, 975x610) plus DC and Puerto Rico callouts."""
+    by_name = {s["name"]: s for s in STATES}
+    shapes = {by_name[x["name"]]["abbr"]: (by_name[x["name"]], x) for x in US_MAP}
+    parts, callouts = [], []
+    for ab in sorted(shapes):
+        s, x = shapes[ab]
+        label = ""
+        if ab not in MAP_CALLOUTS:
+            dx, dy = MAP_LABEL_NUDGE.get(ab, (0, 0))
+            size = 13 if x["area"] > 2500 else 10.5
+            label = f'<text x="{x["cx"] + dx:.0f}" y="{x["cy"] + dy:.0f}" font-size="{size}">{ab}</text>'
+        parts.append(f'<a href="/pages/state/{ab.lower()}" aria-label="ELDT training in {esc(s["name"])}" data-name="{esc(s["name"])}">'
+                     f'<path d="{x["d"]}"/>{label}</a>')
+    for i, ab in enumerate(MAP_CALLOUTS):
+        s, x = shapes[ab]
+        y = 200 + i * 30
+        callouts.append(f'<a class="callout" href="/pages/state/{ab.lower()}" aria-label="ELDT training in {esc(s["name"])}" data-name="{esc(s["name"])}">'
+                        f'<line x1="{x["cx"]}" y1="{x["cy"]}" x2="938" y2="{y}"/><rect x="938" y="{y - 11}" width="46" height="22" rx="6"/>'
+                        f'<text x="961" y="{y}" font-size="12">{ab}</text></a>')
+    pr = BY_ABBR["PR"]
+    callouts.append(f'<a class="callout" href="/pages/state/pr" aria-label="ELDT training in {esc(pr["name"])}" data-name="{esc(pr["name"])}">'
+                    '<rect x="872" y="560" width="46" height="22" rx="6"/><text x="895" y="571" font-size="12">PR</text></a>')
+    return ('<svg class="us-map" viewBox="0 0 990 612" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Map of U.S. states. Select your state.">'
+            + "".join(parts) + "".join(callouts) + "</svg>")
+
+
+def state_picker(all_link=True):
+    more = ' <a href="/pages/state">See all states and licensing agencies</a>' if all_link else ""
+    return (f'<div class="state-picker">{state_select()}<div class="us-map-wrap"><p class="map-readout" aria-hidden="true">Select your state</p>{state_map()}</div>'
+            f'<p class="small center map-note">Click your state on the map or choose it from the list.{more}</p></div>')
 
 
 GUIDES = {}  # slug -> meta (filled by load_guides)
@@ -558,8 +612,7 @@ def build_home():
 <section class="section section-soft" id="states">
   <div class="wrap">
     <div class="section-head"><h2>Pick Your State</h2><p>ELDT is a federal rule, so our online theory courses are accepted in every state. See how ELDT and CDL testing work where you live.</p></div>
-    {state_select()}
-    {state_grid()}
+    {state_picker()}
   </div>
 </section>
 
@@ -642,7 +695,18 @@ def build_course(c):
         desc = "".join(f"<p>{esc(d)}</p>" for d in m["desc"])
         mod_html.append(f'<details class="module"><summary>{esc(m["title"])}{count}</summary><div class="body">{desc}{topics}{les}</div></details>')
     save_pct = round((1 - c["price"] / c["compare_at"]) * 100) if c.get("compare_at") else 0
-    eldt_label = {"required": "Required by federal ELDT rule", "partial": "Hazmat portion required by ELDT", "not-federal": "Not required by federal ELDT rule"}[c["eldt"]]
+    eldt_label = {"required": "Required by federal ELDT rule", "partial": "Meets the ELDT hazmat requirement", "not-federal": "Prepares you for the N knowledge test"}[c["eldt"]]
+    n_only = c["eldt"] == "not-federal"  # Tanker (N): not an ELDT category, so nothing goes to the TPR
+    tpr_badge = "✔ No TPR wait: test when ready" if n_only else "✔ Reported to FMCSA TPR"
+    tpr_check = "No Training Provider Registry submission needed, so you can test when ready" if n_only else "Completion reported to the FMCSA Training Provider Registry"
+    if n_only:
+        tpr_step = ("<li><strong>No Training Provider Registry wait.</strong> The N endorsement is not part of the federal ELDT mandate, so there is nothing to submit "
+                    "and nothing to wait for.</li>")
+        test_step = "<li><strong>Take your state's N endorsement knowledge test</strong> at your licensing agency as soon as you feel ready.</li>"
+    else:
+        tpr_step = "<li><strong>We report your completion to the FMCSA Training Provider Registry</strong>, within the federal deadline of midnight on the second business day.</li>"
+        test_step = (f"<li><strong>{('Complete behind-the-wheel training, then take your ' + esc(c['verify']) + '.') if c['btw'].startswith('Yes') else ('Take your ' + esc(c['verify']) + '.')}</strong> "
+                     "Your state licensing agency checks the TPR before testing.</li>")
     faqs = list(c["faqs"])
     for q, ans in syl.get("faqs", []):
         faqs.append((q, " ".join(ans)))
@@ -667,7 +731,7 @@ def build_course(c):
 <div class="wrap">{breadcrumb_html(crumbs)}</div>
 <div class="wrap product-top">
   <div>
-    <div class="badges"><span class="badge green">✔ Reported to FMCSA TPR</span><span class="badge">100% online</span><span class="badge">Audio playback</span><span class="badge orange">{esc(eldt_label)}</span></div>
+    <div class="badges"><span class="badge green">{tpr_badge}</span><span class="badge">100% online</span><span class="badge">Audio playback</span><span class="badge orange">{esc(eldt_label)}</span></div>
     <h1>{esc(c['h1'])}</h1>
     {intro}
     <dl class="key-facts">
@@ -687,7 +751,7 @@ def build_course(c):
     <a class="btn btn-dark btn-lg btn-block" href="/checkout?item={c['slug']}">Enroll Now</a>
     <ul class="checklist" style="margin-top:16px">
       <li>Start instantly after checkout</li>
-      <li>Completion reported to the FMCSA Training Provider Registry</li>
+      <li>{tpr_check}</li>
       <li>Audio playback reads every lesson aloud</li>
       <li>Works on phone, tablet, or computer</li>
       <li>30-day refund policy</li>
@@ -712,8 +776,8 @@ def build_course(c):
         <li><strong>Enroll and get your login.</strong> Your account is created at checkout and login details are emailed to you right away.</li>
         <li><strong>Complete the lessons at your own pace.</strong> Use audio playback, pause anytime, and switch between devices.</li>
         <li><strong>Pass the final theory assessment with 80% or higher.</strong> You can review the material before you test.</li>
-        <li><strong>We report your completion to the FMCSA Training Provider Registry</strong>, within the federal deadline of midnight on the second business day.</li>
-        <li><strong>{('Complete behind-the-wheel training, then take your ' + esc(c['verify']) + '.') if c['btw'].startswith('Yes') else ('Take your ' + esc(c['verify']) + '.')}</strong> Your state licensing agency checks the TPR before testing.</li>
+        {tpr_step}
+        {test_step}
       </ol>
 
       <h2 id="eldt-requirements">Where this course fits in the ELDT rules</h2>
@@ -746,7 +810,8 @@ def build_course(c):
         "@type": "Course", "@id": url("/products/" + c["handle"]) + "#course", "name": c["name"], "description": c["description"],
         "url": url("/products/" + c["handle"]), "provider": {"@id": DOMAIN + "/#organization"}, "inLanguage": "en",
         "courseCode": c["sku"], "isAccessibleForFree": False, "educationalLevel": "Beginner", "teaches": [m["title"].split(": ", 1)[-1] for m in modules if m["title"].lower().startswith(("module", "lesson"))],
-        "educationalCredentialAwarded": "ELDT theory training certification submitted to the FMCSA Training Provider Registry",
+        "educationalCredentialAwarded": ("Tank vehicle (N) endorsement training completion" if c["eldt"] == "not-federal"
+                                          else "ELDT theory training certification submitted to the FMCSA Training Provider Registry"),
         "about": ["Entry-Level Driver Training", c["short"]],
         "offers": [{"@type": "Offer", "category": "Paid", "price": f"{c['price']:.2f}", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": url("/products/" + c["handle"])}],
         "hasCourseInstance": [{"@type": "CourseInstance", "courseMode": "Online", "courseWorkload": f"PT{c['hours']}H", "inLanguage": "en",
@@ -902,7 +967,7 @@ def build_state_index():
 <div class="wrap">{breadcrumb_html([("Home", "/"), ("ELDT by State", "/pages/state")])}</div>
 <section class="page-hero"><div class="wrap"><h1>ELDT Training by State: Online CDL Theory in All 50 States</h1>
 <p class="lead">We offer FMCSA-compliant ELDT training that meets your state's requirements, making it easy to get certified from anywhere. Choose your state for licensing-agency details, steps to your CDL, and local freight information.</p></div></section>
-<section class="section"><div class="wrap">{state_select()}{state_grid()}</div></section>
+<section class="section"><div class="wrap">{state_picker(all_link=False)}</div></section>
 <section class="section section-soft"><div class="wrap-narrow prose">
 <h2>State CDL licensing agencies</h2>
 <div class="table-wrap"><table><thead><tr><th scope="col">State</th><th scope="col">Agency that issues CDLs and checks ELDT</th></tr></thead><tbody>{rows}</tbody></table></div>
@@ -1146,7 +1211,7 @@ def build_robots():
 
 def build_llms():
     course_lines = "\n".join(
-        f"- [{c['name']}]({url('/products/' + c['handle'])}): {money(c['price'])}, {c['hours']} hour{'s' if c['hours'] != 1 else ''} online. {(c['card_req'] + '.') if c['eldt'] != 'not-federal' else 'Tank vehicle training (N is not covered by the federal ELDT rule).'} Enroll: {url('/checkout?item=' + c['slug'])}"
+        f"- [{c['name']}]({url('/products/' + c['handle'])}): {money(c['price'])}, {c['hours']} hour{'s' if c['hours'] != 1 else ''} online. {(c['card_req'] + '.') if c['eldt'] != 'not-federal' else 'Prepares you for the Tanker (N) endorsement knowledge test. N is not part of the federal ELDT mandate, so there is no Training Provider Registry step.'} Enroll: {url('/checkout?item=' + c['slug'])}"
         for c in COURSES)
     by_cat = []
     for cat in CATEGORIES:

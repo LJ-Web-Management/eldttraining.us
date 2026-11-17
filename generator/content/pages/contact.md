@@ -9,6 +9,13 @@ lead: Start your road to success today! Whether you're ready to enroll or need m
 ---
 <div class="grid-2" style="margin-bottom:28px"><div class="card"><h2 style="font-size:1.15rem">Call us</h2><p><a href="tel:+18664296742" style="font-size:1.3rem;font-weight:700">(866) 429-6742</a></p><p class="small">6:00 AM to 5:00 PM Pacific</p></div><div class="card"><h2 style="font-size:1.15rem">Email us</h2><p><a href="mailto:info@eldttraining.us" style="font-size:1.15rem;font-weight:700">info@eldttraining.us</a></p><p class="small">We usually reply within one business day.</p></div></div>
 
+## Send us a message
+
+Tell us what you need and we will get back to you, usually within one business day.
+
+<div class="typeform-card"><div data-tf-live="01JFSQSDHK38W6V59EY80V1FQ7"></div><noscript><p>Our contact form needs JavaScript. Email <a href="mailto:info@eldttraining.us">info@eldttraining.us</a> or call <a href="tel:+18664296742">(866) 429-6742</a> instead.</p></noscript></div>
+<script src="https://embed.typeform.com/next/embed.js" async></script>
+
 ## We can help with
 
 - Choosing the right ELDT course for your license or endorsement
