@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
       } else { wasEl.hidden = true; }
     }
     var back = document.getElementById('summaryCourseLink');
-    if (back) back.href = '/products/' + selected.handle;
+    if (back) back.href = (document.documentElement.getAttribute('data-base') || '') + '/products/' + selected.handle;
     if (courseSelect) courseSelect.value = selected.slug;
   };
 

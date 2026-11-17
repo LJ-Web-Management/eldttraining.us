@@ -38,6 +38,31 @@ LOGO = "/assets/img/eldt-training-logo.jpg"
 SYLLABI = json.load(open(os.path.join(HERE, "data", "syllabi.json")))
 ASSET_V = datetime.now().strftime("%Y%m%d%H%M")
 
+# Hosting under a sub-path (e.g. the GitHub Pages preview at lj-web-management.github.io/eldttraining.us/).
+# BASE_PATH="/eldttraining.us" prefixes every root-relative link; leave it empty on the real domain.
+# Any build served somewhere other than eldttraining.us is marked noindex so it never competes in Google.
+BASE = os.environ.get("BASE_PATH", "").strip().rstrip("/")
+if BASE and not BASE.startswith("/"):
+    BASE = "/" + BASE
+SITE_HOST = os.environ.get("SITE_HOST", "").strip().lower()
+PREVIEW = bool(BASE) or (SITE_HOST not in ("", "eldttraining.us", "www.eldttraining.us"))
+
+_ATTR_RE = re.compile(r'(\s(?:href|src|action|poster|value)=")/(?!/)')
+_SRCSET_RE = re.compile(r'(\s(?:srcset|imagesrcset)=")([^"]*)"')
+_ROBOTS_RE = re.compile(r'<meta name="robots" content="[^"]*">')
+
+
+def finalize(doc):
+    """Apply BASE_PATH to root-relative URLs and noindex preview builds."""
+    if BASE:
+        doc = _ATTR_RE.sub(lambda m: m.group(1) + BASE + "/", doc)
+        doc = _SRCSET_RE.sub(lambda m: m.group(1) + re.sub(r'(^|,\s*)/(?!/)', lambda n: n.group(1) + BASE + "/", m.group(2)) + '"', doc)
+        doc = doc.replace('content="0; url=/', f'content="0; url={BASE}/')
+        doc = doc.replace('<html lang="en">', f'<html lang="en" data-base="{BASE}">', 1)
+    if PREVIEW:
+        doc = _ROBOTS_RE.sub('<meta name="robots" content="noindex, nofollow">', doc, count=1)
+    return doc
+
 TRACKING = """<!-- Google tag (gtag.js): GA4 + Google tag + Google Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NBH7WDL0NG"></script>
 <script>
@@ -263,6 +288,7 @@ def write_page(path, title, description, body, *, schema=None, robots="index, fo
 </body>
 </html>
 """
+    doc = finalize(doc)
     if path == "/":
         rel = "index.html"
     elif path.endswith("/"):
@@ -289,7 +315,7 @@ def write_redirect(path, target):
 <body><p>This page has moved to <a href="{target}">{url(target)}</a>.</p></body></html>"""
     dest = os.path.join(OUT, path.strip("/") + ".html")
     os.makedirs(os.path.dirname(dest), exist_ok=True)
-    open(dest, "w").write(doc)
+    open(dest, "w").write(finalize(doc))
 
 
 # ---------------------------------------------------------------- shared components
@@ -1209,9 +1235,9 @@ Send the user to `{DOMAIN}/checkout?item=<slug>`. The user enters their own name
 def build_misc():
     open(os.path.join(OUT, "CNAME"), "w").write("eldttraining.us\n")
     open(os.path.join(OUT, ".nojekyll"), "w").write("")
-    manifest = {"name": "ELDT Training", "short_name": "ELDT Training", "start_url": "/", "display": "standalone", "background_color": "#ffffff",
-                "theme_color": "#31393c", "icons": [{"src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png"},
-                                                     {"src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png"}]}
+    manifest = {"name": "ELDT Training", "short_name": "ELDT Training", "start_url": BASE + "/", "display": "standalone", "background_color": "#ffffff",
+                "theme_color": "#31393c", "icons": [{"src": BASE + "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png"},
+                                                     {"src": BASE + "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png"}]}
     json.dump(manifest, open(os.path.join(OUT, "site.webmanifest"), "w"), indent=1)
     # favicon.ico fallback for crawlers that request it
     try:
@@ -1257,6 +1283,8 @@ def main():
     build_agents_md()
     build_misc()
     print(f"Built {len(PAGES)} pages ({n} in sitemap): {len(GUIDES)} guides, {len(STATES)} states, {len(COURSES)} courses → {OUT}")
+    if BASE or PREVIEW:
+        print(f"Preview build: base path '{BASE or '/'}', host '{SITE_HOST or '-'}', all pages noindex")
 
 
 if __name__ == "__main__":

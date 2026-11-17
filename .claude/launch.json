@@ -6,6 +6,12 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["generator/serve.py", "8130"],
       "port": 8130
+    },
+    {
+      "name": "eldt-site-subpath",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["generator/serve.py", "8131", "/eldttraining.us"],
+      "port": 8131
     }
   ]
 }

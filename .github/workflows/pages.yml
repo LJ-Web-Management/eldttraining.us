@@ -26,11 +26,23 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pillow
+      - id: pages
+        uses: actions/configure-pages@v5
       - name: Build site
         run: python3 generator/build.py
       - name: Validate (fails on broken links, invalid schema, duplicate meta)
         run: python3 generator/validate.py
-      - uses: actions/configure-pages@v5
+      # Rebuild for wherever Pages serves the site. Without a custom domain that is
+      # lj-web-management.github.io/eldttraining.us/, so links get the /eldttraining.us
+      # prefix and every page is noindex. With eldttraining.us connected, base_path is
+      # empty and this build is identical to the validated one.
+      - name: Build for the Pages URL
+        env:
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          SITE_HOST: ${{ steps.pages.outputs.host }}
+        run: |
+          echo "Pages URL: ${{ steps.pages.outputs.base_url }}"
+          python3 generator/build.py
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

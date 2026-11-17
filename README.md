@@ -29,6 +29,20 @@ python3 generator/validate.py   # SEO/integrity audit
 python3 generator/serve.py      # preview at http://127.0.0.1:8130
 ```
 
+## Preview on GitHub Pages (before the domain is connected)
+
+Without a custom domain, Pages serves the site at `https://lj-web-management.github.io/eldttraining.us/`. The workflow reads that sub-path from `actions/configure-pages` and rebuilds with `BASE_PATH=/eldttraining.us`, which prefixes every internal link and asset and marks every page `noindex` so the preview never competes with the real domain in Google. Once `eldttraining.us` is set as the custom domain, the base path is empty and the deployed build is the normal one, with no workflow change needed.
+
+To reproduce the preview locally:
+
+```bash
+BASE_PATH=/eldttraining.us python3 generator/build.py
+python3 generator/serve.py 8131 /eldttraining.us   # http://127.0.0.1:8131/eldttraining.us/
+python3 generator/build.py                          # rebuild normally before committing
+```
+
+The preview uses the same live Stripe key, course API, GA4, Google Ads, and Clarity as production. Real card payments there are real orders. Filter GA4/Clarity by hostname to exclude preview traffic.
+
 ## URLs preserved from Shopify (no redirects needed)
 
 Pages are written as `<path>.html`, which GitHub Pages, Cloudflare Pages, and Netlify all serve at the extensionless URL:

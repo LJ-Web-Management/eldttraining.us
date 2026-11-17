@@ -44,6 +44,8 @@
       var a = e.target.closest ? e.target.closest('a') : null;
       if (!a) return;
       var href = a.getAttribute('href') || '';
+      var base = document.documentElement.getAttribute('data-base') || '';
+      if (base && href.indexOf(base + '/') === 0) href = href.slice(base.length);
       if (href.indexOf('/checkout') === 0) {
         var m = href.match(/item=([^&]+)/);
         track('event', 'select_item', { item_list_name: document.title, items: [{ item_id: m ? decodeURIComponent(m[1]) : 'unknown' }] });
