@@ -1,0 +1,685 @@
+{
+ "cdl-entry-level-driver-training-eldt-tanker-n-endorsement": {
+  "title": "CDL Entry Level Driver Training (ELDT) Tanker (N) Endorsement",
+  "price": "49.99",
+  "compare_at": "99.99",
+  "sku": "CDL-ELDT-N",
+  "modules": [
+   {
+    "title": "Lesson 1: Regulatory Overview",
+    "desc": [
+     "Introduces the federal regulations and safety standards that govern tank vehicle operations. Students will gain an understanding of applicable FMCSA requirements, CDL tank endorsement rules, and the driver\u2019s legal responsibilities before operating a tank vehicle. Emphasis is placed on compliance, permit, and endorsement requirements, route considerations, and the importance of understanding how regulations are designed to reduce risk associated with liquid cargo movement."
+    ],
+    "topics": [],
+    "lessons": []
+   },
+   {
+    "title": "Lesson 2: Tank Vehicles Operation and Inspection",
+    "desc": [
+     "Focuses on the safe operation and inspection of tank vehicles. Students will learn how tank design features such as bulkheads, baffles, and smooth-bore tanks affect vehicle handling and liquid surge. The lesson covers proper pre-trip inspection procedures, including checking valves, manhole covers, hoses, and emergency shutoff systems. Operational topics include safe driving techniques, surge control, curve and ramp management, and the effects of partial loads."
+    ],
+    "topics": [],
+    "lessons": []
+   },
+   {
+    "title": "Final Examination",
+    "desc": [
+     "Test your knowledge and ensure you are prepared to operate tank vehicles safely and in compliance with federal regulations."
+    ],
+    "topics": [],
+    "lessons": []
+   }
+  ],
+  "faqs": [
+   [
+    "I already have my learner\u2019s permit in hand. Do I need to take more tests in this course, or is it just a precursor to take the test I have already passed?",
+    [
+     "If you already have your CDL learner\u2019s permit in hand, then you have already passed the written permit tests required by your state.",
+     "This ELDT course is not another DMV permit test. It is the federally required Entry-Level Driver Training (ELDT) theory training that must be completed and submitted to the FMCSA Training Provider Registry before you can take your CDL behind-the-wheel skills test (pre-trip, backing, and road test).",
+     "You will complete quizzes and a final exam within the course itself, but those are for training completion purposes only and are separate from the DMV permit exams you already passed."
+    ]
+   ]
+  ]
+ },
+ "entry-level-driver-training-eldt-hazmat-and-tank-vehicle-endorsement": {
+  "title": "CDL Entry Level Driver Training (ELDT) - Hazmat and Tank Vehicle (X) Endorsement",
+  "price": "129.99",
+  "compare_at": "169.00",
+  "sku": "X Endorsment",
+  "modules": [
+   {
+    "title": "Module 1: Hazmat Basic Requirements and Communication",
+    "desc": [
+     "Foundational hazardous materials competencies and the DOT Hazardous Materials Regulations (HMR) and FMCSR requirements that apply to drivers: the hazardous materials table, marking, labeling and placarding, shipping papers, and the reporting channels to use during a hazmat emergency."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 1: Basic Introductory Hazardous Materials Requirements",
+     "Lesson 2: Operational Hazardous Materials Requirements",
+     "Lesson 3: Reporting Hazardous Materials Crashes and Releases"
+    ]
+   },
+   {
+    "title": "Module 2: Safe Transportation Practices",
+    "desc": [
+     "Practical procedures for moving hazardous materials safely: tunnel and railroad-crossing rules, loading and unloading, segregation and securement, hazmat near foodstuffs, and bulk packages including cargo tanks and portable tanks."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 4: Tunnels and Railroad (RR)-Highway Grade Crossing Requirements",
+     "Lesson 5: Loading and Unloading Hazardous Materials",
+     "Lesson 6: Hazardous Materials on Passenger Vehicles",
+     "Lesson 7: Bulk Packages",
+     "Lesson 8: Tank Vehicles Operation and Inspection"
+    ]
+   },
+   {
+    "title": "Module 3: Emergency Preparedness and Response",
+    "desc": [
+     "How to respond to crashes and unintended releases, including reporting procedures and emergency-response practices that protect people, property, and the environment."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 9: Operating Emergency Equipment",
+     "Lesson 10: Emergency Response Procedures"
+    ]
+   },
+   {
+    "title": "Module 4: Pre-Trip and Operational Considerations",
+    "desc": [
+     "Pre-trip tire checks and the FMCSA rules on fueling while transporting hazardous materials."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 11: Engine (Fueling)",
+     "Lesson 12: Tire Check"
+    ]
+   },
+   {
+    "title": "Module 5: Planning and Permits",
+    "desc": [
+     "Route planning, selecting compliant routes, when a Hazardous Materials Safety Permit (HMSP) is required, and operating under an HMSP."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 13: Routes and Route Planning",
+     "Lesson 14: Hazardous Materials Safety Permits (HMSP)"
+    ]
+   },
+   {
+    "title": "Final Examination",
+    "desc": [
+     "A final theory assessment covering hazmat and tank-vehicle content."
+    ],
+    "topics": [],
+    "lessons": []
+   }
+  ],
+  "faqs": [
+   [
+    "I already have my learner\u2019s permit in hand. Do I need to take more tests in this course, or is it just a precursor to take the test I have already passed?",
+    [
+     "If you already have your CDL learner\u2019s permit in hand, then you have already passed the written permit tests required by your state.",
+     "This ELDT course is not another DMV permit test. It is the federally required Entry-Level Driver Training (ELDT) theory training that must be completed and submitted to the FMCSA Training Provider Registry before you can take your CDL behind-the-wheel skills test (pre-trip, backing, and road test).",
+     "You will complete quizzes and a final exam within the course itself, but those are for training completion purposes only and are separate from the DMV permit exams you already passed."
+    ]
+   ]
+  ]
+ },
+ "cdl-entry-level-driver-training-eldt-school-bus-s-endorsement": {
+  "title": "CDL Entry Level Driver Training (ELDT) \u2013 School Bus (S) Endorsement",
+  "price": "59.99",
+  "compare_at": "99.00",
+  "sku": "CELDTSBS",
+  "modules": [
+   {
+    "title": "Module 1: Operational Considerations",
+    "desc": [
+     "This module covers the foundational knowledge and skills required for safe school bus operation, including vehicle inspections and mastering mirror usage."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 1: Vehicle Orientation",
+     "Lesson 2: Pre-Trip and Post-Trip Inspections",
+     "Lesson 3: Danger Zones and Use of Mirrors",
+     "Lesson 4: Railroad-Highway Grade Crossings"
+    ]
+   },
+   {
+    "title": "Module 2: Student Management",
+    "desc": [
+     "Learn how to effectively manage student behavior on the bus to ensure a safe and distraction-free environment."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 5: Loading and Unloading Procedures",
+     "Lesson 6: Student Management"
+    ]
+   },
+   {
+    "title": "Module 3: Emergency and Safety Procedures",
+    "desc": [
+     "Gain knowledge of essential emergency procedures, including crash response and bus evacuation techniques, to ensure student safety during emergencies."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 7: Post-Crash Procedures",
+     "Lesson 8: Emergency Exit and Evacuation"
+    ]
+   },
+   {
+    "title": "Module 4: Security and Inspections",
+    "desc": [
+     "Explore the importance of security measures and thorough inspections to prevent hazards and ensure the safety of students."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 9: Special Safety Considerations",
+     "Lesson 10: School Bus Security",
+     "Lesson 11: Route and Stop Reviews"
+    ]
+   },
+   {
+    "title": "Practice Examination",
+    "desc": [
+     "Prepare for success with comprehensive practice exams to reinforce your knowledge and boost your confidence."
+    ],
+    "topics": [],
+    "lessons": []
+   }
+  ],
+  "faqs": [
+   [
+    "I already have my learner\u2019s permit in hand. Do I need to take more tests in this course, or is it just a precursor to take the test I have already passed?",
+    [
+     "If you already have your CDL learner\u2019s permit in hand, then you have already passed the written permit tests required by your state.",
+     "This ELDT course is not another DMV permit test. It is the federally required Entry-Level Driver Training (ELDT) theory training that must be completed and submitted to the FMCSA Training Provider Registry before you can take your CDL behind-the-wheel skills test (pre-trip, backing, and road test).",
+     "You will complete quizzes and a final exam within the course itself, but those are for training completion purposes only and are separate from the DMV permit exams you already passed."
+    ]
+   ]
+  ]
+ },
+ "cdl-entry-level-driver-training-eldt-passenger-p-endorsement": {
+  "title": "CDL Entry Level Driver Training (ELDT) \u2013 Passenger (P) Endorsement",
+  "price": "59.99",
+  "compare_at": "99.99",
+  "sku": "ELDTPEndorsement",
+  "modules": [
+   {
+    "title": "Module 1: Pre-Trip and Operational Considerations",
+    "desc": [
+     "Learn how to handle emergencies and maintain vehicle safety through proper post-crash procedures and essential inspections."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 1: Vehicle Orientation",
+     "Lesson 2: Pre-Trip, En Route, and Post-Trip Inspection",
+     "Lesson 3: Fueling",
+     "Lesson 4: Idling"
+    ]
+   },
+   {
+    "title": "Module 2: Emergency and Safety Procedures",
+    "desc": [
+     "Develop the skills to effectively respond to emergencies, including post-crash actions and other safety procedures."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 5: Post-Crash Procedures",
+     "Lesson 6: Other Emergency Procedures"
+    ]
+   },
+   {
+    "title": "Module 3: Cargo and Passenger Management",
+    "desc": [
+     "Focus on best practices for secure cargo handling, passenger safety briefings, and compliance with the Americans with Disabilities Act (ADA)."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 7: Baggage and/or Cargo Management",
+     "Lesson 8: Passenger Safety Awareness Briefing",
+     "Lesson 9: Passenger Management",
+     "Lesson 10: Americans With Disabilities Act (ADA) Compliance"
+    ]
+   },
+   {
+    "title": "Module 4: Hours of Service and Safety Regulations",
+    "desc": [
+     "Understand Hours of Service (HOS) requirements, seat belt safety, and the risks associated with distracted driving."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 11: Hours of Service (HOS) Requirements",
+     "Lesson 12: Belt Safety",
+     "Lesson 13: Distracted Driving"
+    ]
+   },
+   {
+    "title": "Module 5: Navigational Safety",
+    "desc": [
+     "Master the essentials of navigating highways safely, including railroad-highway grade crossings and weigh station compliance."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 14: Railroad-Highway Grade Crossings and Drawbridges",
+     "Lesson 15: Weigh Stations"
+    ]
+   },
+   {
+    "title": "Module 6: Security and Inspections",
+    "desc": [
+     "Learn how to enhance security, prepare for roadside inspections, and avoid penalties by adhering to regulations."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 16: Security and Crime",
+     "Lesson 17: Roadside Inspections",
+     "Lesson 18: Penalties and Fines"
+    ]
+   },
+   {
+    "title": "Practice Examination",
+    "desc": [
+     "Test your knowledge and ensure you are well-prepared for vehicle safety and operational excellence."
+    ],
+    "topics": [],
+    "lessons": []
+   }
+  ],
+  "faqs": [
+   [
+    "I already have my learner\u2019s permit in hand. Do I need to take more tests in this course, or is it just a precursor to take the test I have already passed?",
+    [
+     "If you already have your CDL learner\u2019s permit in hand, then you have already passed the written permit tests required by your state.",
+     "This ELDT course is not another DMV permit test. It is the federally required Entry-Level Driver Training (ELDT) theory training that must be completed and submitted to the FMCSA Training Provider Registry before you can take your CDL behind-the-wheel skills test (pre-trip, backing, and road test).",
+     "You will complete quizzes and a final exam within the course itself, but those are for training completion purposes only and are separate from the DMV permit exams you already passed."
+    ]
+   ]
+  ]
+ },
+ "cdl-entry-level-driver-training-eldt-hazmat-h-endorsement": {
+  "title": "CDL Entry Level Driver Training (ELDT) - HAZMAT (H) Endorsement",
+  "price": "69.99",
+  "compare_at": "99.99",
+  "sku": "ELDTHEndorsement",
+  "modules": [
+   {
+    "title": "Module 1: Hazmat Basic Requirements and Communication",
+    "desc": [
+     "This module sets the stage for understanding the rules and regulations governing hazardous materials transportation. It covers foundational competencies, DOT HMR and FMCSR regulatory requirements, and the hazardous materials table. It also explains proper marking, labeling, placarding, shipping papers, and emergency reporting channels."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 1: Basic Introductory Hazardous Materials Requirements",
+     "Lesson 2: Operational Hazardous Materials Requirements",
+     "Lesson 3: Reporting Hazardous Materials Crashes and Releases"
+    ]
+   },
+   {
+    "title": "Module 2: Safe Transportation Practices",
+    "desc": [
+     "This module introduces practical procedures for safely transporting hazardous materials, including navigating tunnels and railroad crossings, proper loading and unloading, and handling bulk packages like cargo tanks."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 4: Tunnels and Railroad (RR)-Highway Grade Crossing Requirements",
+     "Lesson 5: Loading and Unloading Hazardous Materials",
+     "Lesson 6: Hazardous Materials on Passenger Vehicles",
+     "Lesson 7: Bulk Packages"
+    ]
+   },
+   {
+    "title": "Module 3: Emergency Preparedness and Response",
+    "desc": [
+     "This module focuses on preparing for and responding to hazardous materials emergencies. It emphasizes reporting procedures and best practices to protect people, property, and the environment."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 8: Operating Emergency Equipment",
+     "Lesson 9: Emergency Response Procedures"
+    ]
+   },
+   {
+    "title": "Module 4: Pre-Trip and Operational Considerations",
+    "desc": [
+     "This module emphasizes the importance of pre-trip checks, such as tire inspections and fueling regulations, to ensure the safe transportation of hazardous materials."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 10: Engine (Fueling)",
+     "Lesson 11: Tire Check"
+    ]
+   },
+   {
+    "title": "Module 5: Planning and Permits",
+    "desc": [
+     "This module focuses on route planning and the requirements for Hazardous Materials Safety Permits (HMSP). It provides guidance on planning safe and compliant journeys."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 12: Routes and Route Planning",
+     "Lesson 13: Hazardous Materials Safety Permits (HMSP)"
+    ]
+   },
+   {
+    "title": "Practice Examination",
+    "desc": [
+     "Test your knowledge and ensure you're ready to handle hazardous materials safely and in compliance with regulations.",
+     "Note: There is no separate training required for the X endorsement. Drivers obtain it by completing the H (HazMat) endorsement training and passing the DMV knowledge test for the N (Tanker) endorsement, which together authorize the transport of hazardous materials in tank vehicles."
+    ],
+    "topics": [],
+    "lessons": []
+   }
+  ],
+  "faqs": [
+   [
+    "I already have my learner\u2019s permit in hand. Do I need to take more tests in this course, or is it just a precursor to take the test I have already passed?",
+    [
+     "If you already have your CDL learner\u2019s permit in hand, then you have already passed the written permit tests required by your state.",
+     "This ELDT course is not another DMV permit test. It is the federally required Entry-Level Driver Training (ELDT) theory training that must be completed and submitted to the FMCSA Training Provider Registry before you can take your CDL behind-the-wheel skills test (pre-trip, backing, and road test).",
+     "You will complete quizzes and a final exam within the course itself, but those are for training completion purposes only and are separate from the DMV permit exams you already passed."
+    ]
+   ]
+  ]
+ },
+ "entry-level-driver-training-eldt-class-b-to-a-upgrade": {
+  "title": "Entry Level Driver Training (ELDT) - Class B to A Upgrade",
+  "price": "99.99",
+  "compare_at": "129.99",
+  "sku": "ELDTB-AUpgrade",
+  "modules": [
+   {
+    "title": "Module 1: Basic Operation of a Commercial Motor Vehicle",
+    "desc": [
+     "This module provides an introduction to Class A CMVs, covering foundational concepts and skills necessary for safe vehicle operation. Topics include regulations, vehicle inspections, and key driving techniques."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 1: Orientation",
+     "Lesson 2: Control Systems and Dashboard",
+     "Lesson 3: Pre-Trip and Post-Trip Inspections",
+     "Lesson 4: Basic Operation",
+     "Lesson 5: Shifting or Operating Transmissions",
+     "Lesson 6: Backing and Docking",
+     "Lesson 7: Coupling and Uncoupling"
+    ]
+   },
+   {
+    "title": "Module 2: Safe Operating Procedures",
+    "desc": [
+     "This module focuses on safe driving practices in various conditions and emphasizes adherence to Federal regulations, including seat belt usage as mandated by 49 CFR Section 392.16."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 8: Visual Search",
+     "Lesson 9: Communication",
+     "Lesson 10: Distracted Driving",
+     "Lesson 11: Speed Management",
+     "Lesson 12: Space Management",
+     "Lesson 13: Night Operation",
+     "Lesson 14: Extreme Driving Conditions"
+    ]
+   },
+   {
+    "title": "Module 3: Advanced Operating Practices",
+    "desc": [
+     "Building on earlier modules, this section prepares trainees for real-world driving scenarios, hazard perception, and managing emergencies effectively."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 15: Hazard Perception",
+     "Lesson 16: Skid Control, Recovery, Jackknifing, and Other Emergencies",
+     "Lesson 17: Railroad-Highway Grade Crossings"
+    ]
+   },
+   {
+    "title": "Module 4: Vehicle Systems and Reporting Malfunctions",
+    "desc": [
+     "This module emphasizes the importance of understanding CMV systems, diagnosing malfunctions, and conducting thorough vehicle inspections and maintenance."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 18: Identification and Diagnosis of Malfunctions",
+     "Lesson 19: Roadside Inspections",
+     "Lesson 20: Vehicle Maintenance"
+    ]
+   },
+   {
+    "title": "Module 5: Non-Driving Activities",
+    "desc": [
+     "This module highlights critical non-driving activities, including compliance with hours of service requirements and promoting driver wellness."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 21: Hours of Service Requirements",
+     "Lesson 22: Fatigue and Wellness Awareness"
+    ]
+   },
+   {
+    "title": "Practice Examination",
+    "desc": [
+     "Prepare for success with comprehensive practice exams to reinforce your knowledge and boost your confidence."
+    ],
+    "topics": [],
+    "lessons": []
+   }
+  ],
+  "faqs": [
+   [
+    "I already have my learner\u2019s permit in hand. Do I need to take more tests in this course, or is it just a precursor to take the test I have already passed?",
+    [
+     "If you already have your CDL learner\u2019s permit in hand, then you have already passed the written permit tests required by your state.",
+     "This ELDT course is not another DMV permit test. It is the federally required Entry-Level Driver Training (ELDT) theory training that must be completed and submitted to the FMCSA Training Provider Registry before you can take your CDL behind-the-wheel skills test (pre-trip, backing, and road test).",
+     "You will complete quizzes and a final exam within the course itself, but those are for training completion purposes only and are separate from the DMV permit exams you already passed."
+    ]
+   ]
+  ]
+ },
+ "entry-level-driver-training-eldt-class-b": {
+  "title": "Entry Level Driver Training (ELDT) - Class B",
+  "price": "119.99",
+  "compare_at": "159.99",
+  "sku": "CDL ELDT C-B",
+  "modules": [
+   {
+    "title": "Module 1: Basic Operation of a Commercial Motor Vehicle",
+    "desc": [
+     "This module introduces the essential knowledge and skills required for operating Class B CMVs, focusing on Federal regulations, vehicle inspections, and key operating techniques."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 1: Orientation",
+     "Lesson 2: Control Systems and Dashboard",
+     "Lesson 3: Pre-Trip and Post-Trip Inspections",
+     "Lesson 4: Basic Operation",
+     "Lesson 5: Shifting or Operating Transmissions",
+     "Lesson 6: Backing and Docking"
+    ]
+   },
+   {
+    "title": "Module 2: Safe Operating Procedures",
+    "desc": [
+     "This module focuses on safe driving practices under various conditions, emphasizing the importance of compliance with seat belt requirements and Federal regulations."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 7: Visual Search",
+     "Lesson 8: Communication",
+     "Lesson 9: Distracted Driving",
+     "Lesson 10: Speed Management",
+     "Lesson 11: Space Management",
+     "Lesson 12: Night Operation",
+     "Lesson 13: Extreme Driving Conditions"
+    ]
+   },
+   {
+    "title": "Module 3: Advanced Operating Practices",
+    "desc": [
+     "This module builds on previous lessons by introducing advanced techniques for hazard perception, emergency response, and operating CMVs under challenging conditions."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 14: Hazard Perception",
+     "Lesson 15: Skid Control, Recovery, Jackknifing, and Other Emergencies",
+     "Lesson 16: Railroad-Highway Grade Crossings"
+    ]
+   },
+   {
+    "title": "Module 4: Vehicle Systems and Reporting Malfunctions",
+    "desc": [
+     "Learn about vehicle systems, subsystems, and their maintenance. This module emphasizes the importance of diagnostics, roadside inspections, and regular upkeep."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 17: Identification and Diagnosis of Malfunctions",
+     "Lesson 18: Roadside Inspections",
+     "Lesson 19: Vehicle Maintenance"
+    ]
+   },
+   {
+    "title": "Module 5: Non-Driving Activities",
+    "desc": [
+     "This module addresses essential non-driving responsibilities, such as managing cargo, environmental compliance, and maintaining wellness."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 20: Handling and Documenting Cargo",
+     "Lesson 21: Environmental Compliance Issues",
+     "Lesson 22: Hours of Service Requirements",
+     "Lesson 23: Fatigue and Wellness Awareness",
+     "Lesson 24: Post-Crash Procedures",
+     "Lesson 25: External Communications",
+     "Lesson 26: Whistleblower and Coercion",
+     "Lesson 27: Trip Planning",
+     "Lesson 28: Drugs and Alcohol",
+     "Lesson 29: Medical Requirements"
+    ]
+   },
+   {
+    "title": "Practice Examination",
+    "desc": [
+     "Prepare for success with comprehensive practice exams to reinforce your knowledge and boost your confidence."
+    ],
+    "topics": [],
+    "lessons": []
+   }
+  ],
+  "faqs": [
+   [
+    "I already have my learner\u2019s permit in hand. Do I need to take more tests in this course, or is it just a precursor to take the test I have already passed?",
+    [
+     "If you already have your CDL learner\u2019s permit in hand, then you have already passed the written permit tests required by your state.",
+     "This ELDT course is not another DMV permit test. It is the federally required Entry-Level Driver Training (ELDT) theory training that must be completed and submitted to the FMCSA Training Provider Registry before you can take your CDL behind-the-wheel skills test (pre-trip, backing, and road test).",
+     "You will complete quizzes and a final exam within the course itself, but those are for training completion purposes only and are separate from the DMV permit exams you already passed."
+    ]
+   ]
+  ]
+ },
+ "entry-level-driver-training-eldt-class-a": {
+  "title": "Entry Level Driver Training (ELDT) - Class A",
+  "price": "129.99",
+  "compare_at": "159.99",
+  "sku": "ELDTClassA",
+  "modules": [
+   {
+    "title": "Module 1: Basic Operation of a Commercial Motor Vehicle",
+    "desc": [
+     "This module provides driver-trainees with a fundamental understanding of Class A Commercial Motor Vehicles (CMVs) and their operation. Trainees will become familiar with the essential instruments, controls, and operating characteristics of CMVs."
+    ],
+    "topics": [
+     "Federal Motor Carrier Safety Regulations (FMCSR)",
+     "Vehicle Inspections",
+     "Vehicle Control",
+     "Shifting and Backing Techniques",
+     "Coupling and Uncoupling Procedures"
+    ],
+    "lessons": [
+     "Lesson 1: Orientation",
+     "Lesson 2: Control Systems and Dashboard",
+     "Lesson 3: Pre-Trip and Post-Trip Inspections",
+     "Lesson 4: Basic Operation",
+     "Lesson 5: Shifting or Operating Transmissions",
+     "Lesson 6: Backing and Docking",
+     "Lesson 7: Coupling and Uncoupling"
+    ]
+   },
+   {
+    "title": "Module 2: Safe Operating Procedures",
+    "desc": [
+     "This module focuses on the safe operation of combination vehicles on highways under varying conditions, emphasizing adherence to 49 CFR Section 392.16 on seat belt use."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 8: Visual Search",
+     "Lesson 9: Communication",
+     "Lesson 10: Distracted Driving",
+     "Lesson 11: Speed Management",
+     "Lesson 12: Space Management",
+     "Lesson 13: Night Operation",
+     "Lesson 14: Extreme Driving Conditions"
+    ]
+   },
+   {
+    "title": "Module 3: Advanced Operating Practices",
+    "desc": [
+     "Building on prior modules, trainees will explore advanced techniques for recognizing and responding to hazards on the road."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 15: Hazard Perception",
+     "Lesson 16: Skid Control, Recovery, Jackknifing, and Other Emergencies",
+     "Lesson 17: Railroad-Highway Grade Crossings"
+    ]
+   },
+   {
+    "title": "Module 4: Vehicle Systems and Reporting Malfunctions",
+    "desc": [
+     "This module covers the systems and subsystems of CMVs, emphasizing the importance of vehicle inspection, operation, and maintenance."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 18: Identification and Diagnosis of Malfunctions",
+     "Lesson 19: Roadside Inspections",
+     "Lesson 20: Vehicle Maintenance"
+    ]
+   },
+   {
+    "title": "Module 5: Non-Driving Activities",
+    "desc": [
+     "This module focuses on critical non-driving responsibilities for safe and efficient CMV operation."
+    ],
+    "topics": [],
+    "lessons": [
+     "Lesson 21: Handling and Documenting Cargo",
+     "Lesson 22: Environmental Compliance Issues",
+     "Lesson 23: Hours of Service Requirements",
+     "Lesson 24: Fatigue and Wellness Awareness",
+     "Lesson 25: Post-Crash Procedures",
+     "Lesson 26: External Communications",
+     "Lesson 27: Whistleblower and Coercion",
+     "Lesson 28: Trip Planning",
+     "Lesson 29: Drugs and Alcohol",
+     "Lesson 30: Medical Requirements"
+    ]
+   },
+   {
+    "title": "Practice Examination",
+    "desc": [
+     "Prepare for success with comprehensive practice exams to reinforce your knowledge and boost your confidence."
+    ],
+    "topics": [],
+    "lessons": []
+   }
+  ],
+  "faqs": [
+   [
+    "I already have my learner\u2019s permit in hand. Do I need to take more tests in this course, or is it just a precursor to take the test I have already passed?",
+    [
+     "If you already have your CDL learner\u2019s permit in hand, then you have already passed the written permit tests required by your state.",
+     "This ELDT course is not another DMV permit test. It is the federally required Entry-Level Driver Training (ELDT) theory training that must be completed and submitted to the FMCSA Training Provider Registry before you can take your CDL behind-the-wheel skills test (pre-trip, backing, and road test).",
+     "You will complete quizzes and a final exam within the course itself, but those are for training completion purposes only and are separate from the DMV permit exams you already passed."
+    ]
+   ]
+  ]
+ }
+}
