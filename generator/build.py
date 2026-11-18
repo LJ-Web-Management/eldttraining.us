@@ -193,7 +193,6 @@ def footer():
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <img src="/assets/img/fmcsa-compliant-badge-sm.png" alt="FMCSA training provider compliant badge" width="90" height="83" loading="lazy" style="margin-bottom:12px">
         <p class="disclaimer"><strong style="color:#fff">Disclaimer:</strong> Eldttraining.us is a private company providing ELDT online training courses. Our courses align with FMCSA and DOT guidelines, and we are listed as a registered training provider on the FMCSA Training Provider Registry. We are not affiliated with FMCSA, USDOT, or any state licensing agency.</p>
         <p class="disclaimer"><strong style="color:#fff">Subsidiary Partnership:</strong> ELDTtraining.us is a subsidiary of Industrial Certified Training, LLC, a company specializing in DOT safety training. We partner with HAZWOPER OSHA Training, LLC to offer a comprehensive range of safety compliance courses.</p>
       </div>
@@ -210,6 +209,7 @@ def footer():
           <li><a href="/pages/state">ELDT by State</a></li>
         </ul>
         <div class="social">{social}</div>
+        <a class="footer-badge" href="https://tpp.eldttraining.us/"><img src="/assets/img/fmcsa-compliant-badge-sm.png" alt="FMCSA-compliant ELDT training provider badge" width="90" height="83" loading="lazy"><span>ELDT Training Partner Program →</span></a>
       </div>
     </div>
     <div class="footer-bottom">
