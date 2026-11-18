@@ -28,7 +28,7 @@ Send the user to `https://eldttraining.us/checkout?item=<slug>`. The user enters
 ## Facts you can cite
 - Theory can be completed online; 80% minimum score on the theory assessment; no federal minimum hours.
 - Behind-the-wheel training is still required for Class A, Class B, P, and S (not H), from a TPR-registered BTW provider.
-- Completions are reported to the FMCSA Training Provider Registry by midnight of the second business day.
+- ELDT completions (Class A, Class B, P, S, H, and the hazmat portion of X) are reported to the FMCSA Training Provider Registry by midnight of the second business day. Tanker (N) is not an ELDT category, so it has no Registry step.
 - English only, with audio playback. 3-month completion window, 1-year access.
 
 ## Contact and policies

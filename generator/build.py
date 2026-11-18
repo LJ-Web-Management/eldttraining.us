@@ -193,6 +193,7 @@ def footer():
   <div class="wrap">
     <div class="footer-grid">
       <div>
+        <a class="footer-logo" href="/"><img src="/assets/img/eldt-training-logo-white.webp" alt="ELDT Training" width="220" height="35" loading="lazy"></a>
         <p class="disclaimer"><strong style="color:#fff">Disclaimer:</strong> Eldttraining.us is a private company providing ELDT online training courses. Our courses align with FMCSA and DOT guidelines, and we are listed as a registered training provider on the FMCSA Training Provider Registry. We are not affiliated with FMCSA, USDOT, or any state licensing agency.</p>
         <p class="disclaimer"><strong style="color:#fff">Subsidiary Partnership:</strong> ELDTtraining.us is a subsidiary of Industrial Certified Training, LLC, a company specializing in DOT safety training. We partner with HAZWOPER OSHA Training, LLC to offer a comprehensive range of safety compliance courses.</p>
       </div>
@@ -206,14 +207,15 @@ def footer():
           <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
           <li><a href="/pages/about-us">About Us</a></li>
           <li><a href="/pages/partner-with-us">Partner With Us</a></li>
+          <li><a href="https://tpp.eldttraining.us/">Training Partner Program</a></li>
           <li><a href="/pages/state">ELDT by State</a></li>
         </ul>
         <div class="social">{social}</div>
-        <a class="footer-badge" href="https://tpp.eldttraining.us/"><img src="/assets/img/fmcsa-compliant-badge-sm.png" alt="FMCSA-compliant ELDT training provider badge" width="90" height="83" loading="lazy"><span>ELDT Training Partner Program →</span></a>
+        <a class="footer-badge" href="https://tpp.eldttraining.us/" aria-label="ELDT Training Partner Program"><img src="/assets/img/fmcsa-compliant-badge-sm.png" alt="FMCSA-compliant ELDT training provider badge" width="90" height="83" loading="lazy"></a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© {YEAR}, ELDT Training. All Rights Reserved.</span>
+      <span>© {YEAR} Industrial Certified Training, LLC. All Rights Reserved.</span>
       <span><a href="/policies/privacy-policy">Privacy Policy</a> · <a href="/policies/terms-of-service">Terms of Service</a> · <a href="/policies/refund-policy">Refund Policy</a> · <a href="/pages/data-sharing-opt-out">Your Privacy Choices</a></span>
     </div>
   </div>
@@ -1284,7 +1286,7 @@ Send the user to `{DOMAIN}/checkout?item=<slug>`. The user enters their own name
 ## Facts you can cite
 - Theory can be completed online; 80% minimum score on the theory assessment; no federal minimum hours.
 - Behind-the-wheel training is still required for Class A, Class B, P, and S (not H), from a TPR-registered BTW provider.
-- Completions are reported to the FMCSA Training Provider Registry by midnight of the second business day.
+- ELDT completions (Class A, Class B, P, S, H, and the hazmat portion of X) are reported to the FMCSA Training Provider Registry by midnight of the second business day. Tanker (N) is not an ELDT category, so it has no Registry step.
 - English only, with audio playback. 3-month completion window, 1-year access.
 
 ## Contact and policies
