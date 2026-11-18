@@ -289,7 +289,6 @@ td.btw{color:var(--muted)}
 @media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
 .footer-grid ul{list-style:none;padding:0;margin:0}
 .footer-grid li{margin:.4em 0}
-.footer-badge{display:inline-block;margin-top:20px}
 .footer-logo{display:inline-block;margin-bottom:16px}
 .footer-logo img{display:block;width:220px;height:auto}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:32px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.85rem}

@@ -211,7 +211,6 @@ def footer():
           <li><a href="/pages/state">ELDT by State</a></li>
         </ul>
         <div class="social">{social}</div>
-        <a class="footer-badge" href="https://tpp.eldttraining.us/" aria-label="ELDT Training Partner Program"><img src="/assets/img/fmcsa-compliant-badge-sm.png" alt="FMCSA-compliant ELDT training provider badge" width="90" height="83" loading="lazy"></a>
       </div>
     </div>
     <div class="footer-bottom">
