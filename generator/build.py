@@ -50,10 +50,33 @@ PREVIEW = bool(BASE) or (SITE_HOST not in ("", "eldttraining.us", "www.eldttrain
 _ATTR_RE = re.compile(r'(\s(?:href|src|action|poster|value)=")/(?!/)')
 _SRCSET_RE = re.compile(r'(\s(?:srcset|imagesrcset)=")([^"]*)"')
 _ROBOTS_RE = re.compile(r'<meta name="robots" content="[^"]*">')
+_TABLE_RE = re.compile(r"<table>(.*?)</table>", re.S)
+
+
+def label_table_cells(doc):
+    """Copy each column header onto its cells as data-label, so small screens can show rows as cards."""
+    def one_table(m):
+        head, sep, body = m.group(1).partition("</thead>")
+        if not sep:
+            return m.group(0)
+        labels = []
+        for th in re.findall(r"<th\b[^>]*>(.*?)</th>", head, re.S):
+            text = "" if "visually-hidden" in th else html.unescape(re.sub(r"<[^>]+>", "", th)).strip()
+            labels.append(html.escape(text, quote=True))
+
+        def one_row(rm):
+            col = iter(labels)
+            def one_cell(cm):
+                label = next(col, "")
+                return cm.group(0)[:-1] + f' data-label="{label}">' if label else cm.group(0)
+            return re.sub(r"<td\b[^>]*>", one_cell, rm.group(0))
+        return "<table>" + head + sep + re.sub(r"<tr\b[^>]*>.*?</tr>", one_row, body, flags=re.S) + "</table>"
+    return _TABLE_RE.sub(one_table, doc)
 
 
 def finalize(doc):
-    """Apply BASE_PATH to root-relative URLs and noindex preview builds."""
+    """Label table cells, apply BASE_PATH to root-relative URLs, and noindex preview builds."""
+    doc = label_table_cells(doc)
     if BASE:
         doc = _ATTR_RE.sub(lambda m: m.group(1) + BASE + "/", doc)
         doc = _SRCSET_RE.sub(lambda m: m.group(1) + re.sub(r'(^|,\s*)/(?!/)', lambda n: n.group(1) + BASE + "/", m.group(2)) + '"', doc)

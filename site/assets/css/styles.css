@@ -17,6 +17,7 @@
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{margin:0;font-family:var(--font-body);font-size:16px;line-height:1.7;color:var(--text);background:var(--bg)}
 img,video,svg{max-width:100%;height:auto;display:block}
+p,li,dd,blockquote{overflow-wrap:break-word}
 a{color:var(--blue);text-underline-offset:2px}
 a:hover{color:#005a92}
 h1,h2,h3,h4{font-family:var(--font-head);color:var(--slate);line-height:1.25;margin:0 0 .6em;font-weight:700}
@@ -185,7 +186,6 @@ td.no{color:#a33;font-weight:700}
 td.rec{color:var(--orange-dark);font-weight:700}
 td.online{color:var(--green-dark);font-weight:600}
 td.btw{color:var(--muted)}
-.eldt-table table{min-width:680px}
 .eldt-table td{vertical-align:middle}
 .eldt-table td:first-child a{text-decoration:none}
 .eldt-table td:first-child a:hover strong{text-decoration:underline}
@@ -195,6 +195,21 @@ td.btw{color:var(--muted)}
 .course-cta{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .course-cell .cell-price{font-family:var(--font-head);font-weight:700;color:var(--slate);font-size:1.05rem}
 .eldt-table th:nth-child(2){width:22%}
+td{overflow-wrap:anywhere}
+/* Small screens: each table row becomes a card; the first cell is its title and every other cell shows its column name */
+@media (max-width:760px){
+  .table-wrap{overflow:visible;border:0;border-radius:0}
+  .table-wrap table{background:transparent}
+  .table-wrap thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .table-wrap table,.table-wrap tbody,.table-wrap tr,.table-wrap td{display:block;width:100%}
+  .table-wrap tr{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0 0 12px}
+  .table-wrap tr:last-child{margin-bottom:0}
+  .table-wrap td,.table-wrap tbody tr:nth-child(even) td{background:#fff;padding:10px 14px;border-bottom:1px solid var(--line)}
+  .table-wrap tr td:last-child{border-bottom:0}
+  .table-wrap td:first-child,.table-wrap tbody tr:nth-child(even) td:first-child{background:var(--bg-cream);font-family:var(--font-head);font-weight:700;color:var(--slate-ink)}
+  .table-wrap td[data-label]:not(:first-child)::before{content:attr(data-label);display:block;margin-bottom:2px;font-family:var(--font-body,inherit);font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+  .course-cell{white-space:normal}
+}
 
 /* ---------- FAQ ---------- */
 .faq{max-width:900px;margin:0 auto}
@@ -262,7 +277,7 @@ td.btw{color:var(--muted)}
 
 /* ---------- Product page ---------- */
 .product-top{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;padding:34px 0 20px;align-items:start}
-@media (max-width:960px){.product-top{grid-template-columns:1fr}}
+@media (max-width:960px){.product-top{grid-template-columns:minmax(0,1fr)}}
 .buy-box{border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow);background:#fff;position:sticky;top:96px}
 .buy-box .price{font-size:2.6rem}
 .buy-box .save{display:inline-block;background:#fdeaea;color:#b42318;font-weight:700;font-size:.8rem;border-radius:20px;padding:2px 10px}
